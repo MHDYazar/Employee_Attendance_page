@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll</title>
+    <link rel="stylesheet" href="Payroll.css">
+</head>
+<body>
+    <div id="container">
+        <!-- Header Section -->
+        <div id="header">
+            <img src="logo.png" alt="Company Logo" id="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="..\Attendance\Attendance.html">Attendance</a></li>
+                    <li><a href="..\Training\Training.html">Training</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </nav>
+            <a href="#" id="login-logout">Login</a>
+        </div>
+
+        <!-- Payroll Management Section -->
+        <div id="payroll-management">
+            <h2>Manage Payroll</h2>
+            <div class="form-group">
+                <label for="employee-select">Select Employee:</label>
+                <select id="employee-select">
+                    <option value="">Select Employee</option>
+                    <!-- Employee options go here -->
+                    <option value="1">John Doe</option>
+                    <option value="2">Jane Smith</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="payroll-month">Select Month:</label>
+                <input type="month" id="payroll-month">
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Salary Amount:</label>
+                <input type="number" id="salary" placeholder="Enter Salary Amount">
+            </div>
+
+            <div class="form-group">
+                <label for="bonus">Bonus Amount:</label>
+                <input type="number" id="bonus" placeholder="Enter Bonus Amount">
+            </div>
+
+            <button id="add-payroll">Add Payroll</button>
+        </div>
+
+        <!-- Payroll History Section -->
+        <div id="payroll-history">
+            <h2>Payroll History</h2>
+            <div id="filters">
+                <input type="month" id="start-month"> to <input type="month" id="end-month">
+                <select id="employee-status">
+                    <option value="all">All Employees</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </div>
+            <table id="payroll-table">
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Month</th>
+                        <th>Salary</th>
+                        <th>Bonus</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Payroll records go here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Employee Salary Details Section -->
+        <div id="employee-details">
+            <h3>Employee Salary Details</h3>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>ID:</strong> 12345</p>
+            <p><strong>Base Salary:</strong> $50,000</p>
+            <p><strong>Department:</strong> IT</p>
+            <p><strong>Email:</strong> johndoe@example.com</p>
+        </div>
+
+        <!-- Footer Section -->
+        <div id="footer">
+            <p>© 2024 Your Company Name</p>
+            <div>
+                <a href="#">Contact Us</a> | 
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Training</title>
+    <link rel="stylesheet" href="Training.css">
+    <!-- Include a pie chart library, like Chart.js (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="container">
+        <!-- Header Section -->
+        <div id="header">
+            <img src="logo.png" alt="Company Logo" id="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="..\Attendance\Attendance.html">Attendance</a></li>
+                    <li><a href="..\Payroll\Payroll.html">Payroll</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </nav>
+            <a href="#" id="login-logout">Login</a>
+        </div>
+
+        <!-- Employee Training Management Section -->
+        <div id="training-management">
+            <h2>Employee Training</h2>
+            <div class="form-group">
+                <label for="employee-select">Select Employee:</label>
+                <select id="employee-select">
+                    <option value="">Select Employee</option>
+                    <option value="1">John Doe</option>
+                    <option value="2">Jane Smith</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="training-course">Select Training Course:</label>
+                <select id="training-course">
+                    <option value="">Select Course</option>
+                    <option value="cruise-safety">Cruise Safety</option>
+                    <option value="customer-service">Customer Service</option>
+                    <option value="marine-environment">Marine Environment</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="training-status">Training Status:</label>
+                <select id="training-status">
+                    <option value="in-progress">In Progress</option>
+                    <option value="complete">Complete</option>
+                    <option value="pending">Pending</option>
+                </select>
+            </div>
+
+            <button id="add-training">Add Training</button>
+        </div>
+
+        <!-- Training Stats Section -->
+        <div id="training-stats">
+            <h2>Training Stats</h2>
+            <div id="pie-chart-container">
+                <canvas id="training-pie-chart"></canvas>
+            </div>
+            <div id="stats-info">
+                <div id="in-progress" class="stat">
+                    <h3>In Progress</h3>
+                    <p class="stat-percentage">50%</p>
+                </div>
+                <div id="complete" class="stat">
+                    <h3>Complete</h3>
+                    <p class="stat-percentage">30%</p>
+                </div>
+                <div id="pending" class="stat">
+                    <h3>Pending</h3>
+                    <p class="stat-percentage">20%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div id="footer">
+            <p>© 2024 Cruise Management Company</p>
+            <div>
+                <a href="#">Contact Us</a> | 
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart.js Pie chart setup
+        const ctx = document.getElementById('training-pie-chart').getContext('2d');
+        const trainingPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['In Progress', 'Complete', 'Pending'],
+                datasets: [{
+                    label: 'Training Progress',
+                    data: [50, 30, 20],
+                    backgroundColor: ['#007BFF', '#28a745', '#ffc107'],
+                    borderColor: ['#007BFF', '#28a745', '#ffc107'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Add animation for the stats
+        window.onload = function() {
+            const stats = document.querySelectorAll('.stat');
+            stats.forEach(stat => {
+                stat.classList.add('animate-up');
+            });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="Attendance.css">
+</head>
+<body>
+    <div id="container">
+        <!-- Header Section -->
+        <div id="header">
+            <img src="logo.png" alt="Company Logo" id="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="..\Payroll\Payroll.html">Payroll</a></li>
+                    <li><a href="..\Training\Training.html">Training</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </nav>
+            <a href="#" id="login-logout">Login</a>
+        </div>
+
+        <!-- Attendance Marking Section -->
+        <div id="attendance-marking">
+            <h2>Mark Attendance</h2>
+            <div class="form-group">
+                <label for="employee-select">Select Employee:</label>
+                <select id="employee-select">
+                    <option value="">Select Employee</option>
+                    <!-- Employee options go here -->
+                    <option value="1">Gaybeeb</option>
+                    <option value="2">Jane Smith</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="attendance-date">Select Date:</label>
+                <input type="date" id="attendance-date">
+            </div>
+
+            <div class="form-group">
+                <label>Attendance Status:</label>
+                <div class="attendance-status">
+                    <input type="radio" name="status" id="present" value="present"><label for="present">Present</label>
+                    <input type="radio" name="status" id="absent" value="absent"><label for="absent">Absent</label>
+                    <input type="radio" name="status" id="leave" value="leave"><label for="leave">Leave</label>
+                </div>
+            </div>
+
+            <button id="mark-attendance">Mark Attendance</button>
+        </div>
+
+        <!-- Attendance History Section -->
+        <div id="attendance-history">
+            <h2>Attendance History</h2>
+            <div id="filters">
+                <input type="date" id="start-date"> to <input type="date" id="end-date">
+                <select id="attendance-status">
+                    <option value="all">All</option>
+                    <option value="present">Present</option>
+                    <option value="absent">Absent</option>
+                    <option value="leave">Leave</option>
+                </select>
+            </div>
+            <table id="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Attendance records go here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Employee Details Section -->
+        <div id="employee-details">
+            <h3>Employee Details</h3>
+            <p><strong>Name:</strong> Gaybeeb</p>
+            <p><strong>ID:</strong> 99999</p>
+            <p><strong>Job Title:</strong> OnBoard Security</p>
+            <p><strong>Department:</strong> Security</p>
+            <p><strong>Email:</strong> gaybeeb@gaymail.com</p>
+        </div>
+
+        <!-- Footer Section -->
+        <div id="footer">
+            <p>© 2024 Your Company Name</p>
+            <div>
+                <a href="#">Contact Us</a> | 
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
